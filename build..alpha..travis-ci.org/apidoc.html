@@ -1,0 +1,1703 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/smysnk/gulp-rev-all"
+
+    >gulp-rev-all (v0.9.7)</a>
+</h1>
+<h4>Static asset revisioning by appending content hash to filenames: unicorn.css => unicorn.098f6bcd.css, also re-writes references in each file to new reved name.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-rev-all">module gulp-rev-all</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.manifestFile">
+            function <span class="apidocSignatureSpan">gulp-rev-all.</span>manifestFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revision">
+            function <span class="apidocSignatureSpan">gulp-rev-all.</span>revision
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner">
+            function <span class="apidocSignatureSpan">gulp-rev-all.</span>revisioner
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.versionFile">
+            function <span class="apidocSignatureSpan">gulp-rev-all.</span>versionFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-rev-all.</span>revisioner.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gulp-rev-all.</span>tool</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-rev-all.revisioner">module gulp-rev-all.revisioner</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.revisioner">
+            function <span class="apidocSignatureSpan">gulp-rev-all.</span>revisioner
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-rev-all.revisioner.prototype">module gulp-rev-all.revisioner.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.calculateHash">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>calculateHash
+            <span class="apidocSignatureSpan">(file, stack)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.manifestFile">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>manifestFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.processFile">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>processFile
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.resolveReferences">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>resolveReferences
+            <span class="apidocSignatureSpan">(fileResolveReferencesIn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.revisionFilename">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>revisionFilename
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.run">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>run
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.shouldFileBeRenamed">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>shouldFileBeRenamed
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.shouldSearchFile">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>shouldSearchFile
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.shouldUpdateReference">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>shouldUpdateReference
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.updateReferences">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>updateReferences
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.revisioner.prototype.versionFile">
+            function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>versionFile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gulp-rev-all.tool">module gulp-rev-all.tool</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.tool.get_reference_representations_absolute">
+            function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>get_reference_representations_absolute
+            <span class="apidocSignatureSpan">(fileCurrentReference, file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.tool.get_reference_representations_relative">
+            function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>get_reference_representations_relative
+            <span class="apidocSignatureSpan">(fileCurrentReference, file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.tool.get_relative_path">
+            function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>get_relative_path
+            <span class="apidocSignatureSpan">(base, path, noStartingSlash)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.tool.is_binary_file">
+            function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>is_binary_file
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.tool.join_path">
+            function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>join_path
+            <span class="apidocSignatureSpan">(directory, filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.tool.join_path_url">
+            function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>join_path_url
+            <span class="apidocSignatureSpan">(prefix, path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.tool.md5">
+            function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>md5
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gulp-rev-all.tool.path_without_ext">
+            function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>path_without_ext
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-rev-all" id="apidoc.module.gulp-rev-all">module gulp-rev-all</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.manifestFile" id="apidoc.element.gulp-rev-all.manifestFile">
+        function <span class="apidocSignatureSpan">gulp-rev-all.</span>manifestFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">manifestFile = function () {
+
+  var revisioner;
+
+  // Drop any existing files off the stream, push the generated manifest file
+  return Through.obj(function (file, enc, callback) {
+
+    if (!revisioner) {
+      revisioner = file.revisioner;
+    }
+    callback();
+
+  }, function (callback) {
+
+    if (!revisioner) {
+      this.emit(&#x27;error&#x27;, new PluginError(PLUGIN_NAME, &#x27;revision() must be called first!&#x27;));
+      return callback();
+    }
+
+    this.push(revisioner.manifestFile());
+    callback();
+
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  * See [gulp-awspublish](https://www.npmjs.org/package/gulp-awspublish), [gulp-cloudfront](https://www.npmjs.org/package/gulp-cloudfront
+)
+
+## Methods
+
+### .revision({ options })
+Returns a transform function that can be used to pipe files through so that they may be revisioned, also corrects refererences to
+ said files.
+
+### .<span class="apidocCodeKeywordSpan">manifestFile</span>()
+Returns a transform function that will filter out any existing files going through the pipe and will emit a new manifest file.
+Must be called after `.revision()`.
+
+```js
+var gulp = require(&#x27;gulp&#x27;);
+var RevAll = require(&#x27;gulp-rev-all&#x27;);
+
+gulp.task(&#x27;default&#x27;, function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revision" id="apidoc.element.gulp-rev-all.revision">
+        function <span class="apidocSignatureSpan">gulp-rev-all.</span>revision
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">revision = function (options) {
+
+  var revisioner = new Revisioner(options);
+
+  // Feed the RevAll Revisioner with all the files in the stream, don&#x27;t emit them until all of them have been processed
+  return Through.obj(function (file, enc, callback) {
+
+    if (file.isStream()) {
+      this.emit(&#x27;error&#x27;, new PluginError(PLUGIN_NAME, &#x27;Streams not supported!&#x27;));
+      return callback();
+    }
+
+    if (file.isBuffer()) {
+      revisioner.processFile(file);
+    }
+
+    file.revisioner = revisioner;
+
+    callback();
+
+  }, function (callback) {
+
+    revisioner.run();
+
+    var files = revisioner.files;
+    for (var filename in files) {
+      this.push(files[filename]);
+    }
+    callback();
+
+  });
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var gulp = require(&#x27;gulp&#x27;);
+var RevAll = require(&#x27;gulp-rev-all&#x27;);
+
+gulp.task(&#x27;default&#x27;, function () {
+
+  gulp
+    .src(&#x27;dist/**&#x27;)
+    .pipe(RevAll.<span class="apidocCodeKeywordSpan">revision</span>())
+    .pipe(gulp.dest(&#x27;cdn&#x27;));
+
+});
+```
+
+
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner" id="apidoc.element.gulp-rev-all.revisioner">
+        function <span class="apidocSignatureSpan">gulp-rev-all.</span>revisioner
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">revisioner = function (options) {
+
+  var defaults = {
+    &#x27;hashLength&#x27;: 8,
+    &#x27;dontGlobal&#x27;: [ /^\/favicon.ico$/g ],
+    &#x27;dontRenameFile&#x27;: [],
+    &#x27;dontUpdateReference&#x27;: [],
+    &#x27;dontSearchFile&#x27;: [],
+    &#x27;fileNameVersion&#x27;: &#x27;rev-version.json&#x27;,
+    &#x27;fileNameManifest&#x27;: &#x27;rev-manifest.json&#x27;,
+    &#x27;prefix&#x27;: &#x27;&#x27;,
+    &#x27;referenceToRegexs&#x27;: referenceToRegexs,
+    &#x27;annotator&#x27;: annotator,
+    &#x27;replacer&#x27;: replacer,
+    &#x27;debug&#x27;: false,
+    &#x27;includeFilesInManifest&#x27;: [&#x27;.css&#x27;, &#x27;.js&#x27;]
+  };
+
+  this.options = Merge(defaults, options);
+
+  // File pool, any file passed into the Revisioner is stored in this object
+  this.files = {};
+  this.filesTemp = [];
+
+  // Stores the combined hash of all processed files, used to create the version file
+  this.hashCombined = &#x27;&#x27;;
+
+  // Stores the before : after path of assets, used to create the manifset file
+  this.manifest = {};
+
+  // Enable / Disable logger based on supplied options
+  this.log = (this.options.debug) ? Gutil.log : function () {};
+
+  // Make tools available client side callbacks supplied in options
+  this.Tool = Tool;
+
+
+  var nonFileNameChar = &#x27;[^a-zA-Z0-9\\.\\-\\_\\/]&#x27;;
+  var qoutes = &#x27;\&#x27;|&#x22;&#x27;;
+
+  function referenceToRegexs(reference) {
+    var escapedRefPathBase = Tool.path_without_ext(reference.path).replace(/([^0-9a-z])/ig, &#x27;\\$1&#x27;);
+    var escapedRefPathExt = Path.extname(reference.path).replace(/([^0-9a-z])/ig, &#x27;\\$1&#x27;);
+
+    var regExp, regExps = [];
+    var isJSReference = reference.path.match(/\.js$/);
+
+    // Extensionless javascript file references has to to be qouted
+    if (isJSReference) {
+      regExp = &#x27;(&#x27;+ qoutes +&#x27;)(&#x27; + escapedRefPathBase + &#x27;)()(&#x27;+ qoutes + &#x27;|$)&#x27;;
+      regExps.push(new RegExp(regExp, &#x27;g&#x27;));
+    }
+
+    // Expect left and right sides of the reference to be a non-filename type character, escape special regex chars
+    regExp = &#x27;(&#x27;+ nonFileNameChar +&#x27;)(&#x27; + escapedRefPathBase + &#x27;)(&#x27; +  escapedRefPathExt + &#x27;)(&#x27;+ nonFileNameChar + &#x27;|$)&#x27;;
+    regExps.push(new RegExp(regExp, &#x27;g&#x27;));
+
+    return regExps;
+  }
+
+  function annotator(contents, path) {
+    return [{&#x27;contents&#x27;: contents}];
+  }
+
+  function replacer(fragment, replaceRegExp, newReference, referencedFile) {
+     fragment.contents = fragment.contents.replace(replaceRegExp, &#x27;$1&#x27; + newReference + &#x27;$3$4&#x27;);
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.versionFile" id="apidoc.element.gulp-rev-all.versionFile">
+        function <span class="apidocSignatureSpan">gulp-rev-all.</span>versionFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">versionFile = function () {
+
+  var revisioner;
+
+  // Drop any existing files off the stream, push the generated version file
+  return Through.obj(function (file, enc, callback) {
+
+    if (!revisioner) {
+      revisioner = file.revisioner;
+    }
+
+    // Drop any existing files off the stream
+    callback();
+
+  }, function (callback) {
+
+    if (!revisioner) {
+      this.emit(&#x27;error&#x27;, new PluginError(PLUGIN_NAME, &#x27;revision() must be called first!&#x27;));
+      return callback();
+    }
+
+    this.push(revisioner.versionFile());
+    callback();
+
+  });
+
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```json
+{
+  &#x22;css/unicorn.css&#x22;: &#x22;css/unicorn.098f6bcd.css&#x22;,
+  &#x22;js/unicorn.js&#x22;: &#x22;js/unicorn.273c2cin.js&#x22;
+}
+```
+
+### .<span class="apidocCodeKeywordSpan">versionFile</span>()
+Returns a transform function that will filter out any existing files going through the pipe and will emit a new version file.  Must
+ be called after `.revision()`.
+
+```js
+var gulp = require(&#x27;gulp&#x27;);
+var RevAll = require(&#x27;gulp-rev-all&#x27;);
+
+gulp.task(&#x27;default&#x27;, function () {
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-rev-all.revisioner" id="apidoc.module.gulp-rev-all.revisioner">module gulp-rev-all.revisioner</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.revisioner" id="apidoc.element.gulp-rev-all.revisioner.revisioner">
+        function <span class="apidocSignatureSpan">gulp-rev-all.</span>revisioner
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">revisioner = function (options) {
+
+  var defaults = {
+    &#x27;hashLength&#x27;: 8,
+    &#x27;dontGlobal&#x27;: [ /^\/favicon.ico$/g ],
+    &#x27;dontRenameFile&#x27;: [],
+    &#x27;dontUpdateReference&#x27;: [],
+    &#x27;dontSearchFile&#x27;: [],
+    &#x27;fileNameVersion&#x27;: &#x27;rev-version.json&#x27;,
+    &#x27;fileNameManifest&#x27;: &#x27;rev-manifest.json&#x27;,
+    &#x27;prefix&#x27;: &#x27;&#x27;,
+    &#x27;referenceToRegexs&#x27;: referenceToRegexs,
+    &#x27;annotator&#x27;: annotator,
+    &#x27;replacer&#x27;: replacer,
+    &#x27;debug&#x27;: false,
+    &#x27;includeFilesInManifest&#x27;: [&#x27;.css&#x27;, &#x27;.js&#x27;]
+  };
+
+  this.options = Merge(defaults, options);
+
+  // File pool, any file passed into the Revisioner is stored in this object
+  this.files = {};
+  this.filesTemp = [];
+
+  // Stores the combined hash of all processed files, used to create the version file
+  this.hashCombined = &#x27;&#x27;;
+
+  // Stores the before : after path of assets, used to create the manifset file
+  this.manifest = {};
+
+  // Enable / Disable logger based on supplied options
+  this.log = (this.options.debug) ? Gutil.log : function () {};
+
+  // Make tools available client side callbacks supplied in options
+  this.Tool = Tool;
+
+
+  var nonFileNameChar = &#x27;[^a-zA-Z0-9\\.\\-\\_\\/]&#x27;;
+  var qoutes = &#x27;\&#x27;|&#x22;&#x27;;
+
+  function referenceToRegexs(reference) {
+    var escapedRefPathBase = Tool.path_without_ext(reference.path).replace(/([^0-9a-z])/ig, &#x27;\\$1&#x27;);
+    var escapedRefPathExt = Path.extname(reference.path).replace(/([^0-9a-z])/ig, &#x27;\\$1&#x27;);
+
+    var regExp, regExps = [];
+    var isJSReference = reference.path.match(/\.js$/);
+
+    // Extensionless javascript file references has to to be qouted
+    if (isJSReference) {
+      regExp = &#x27;(&#x27;+ qoutes +&#x27;)(&#x27; + escapedRefPathBase + &#x27;)()(&#x27;+ qoutes + &#x27;|$)&#x27;;
+      regExps.push(new RegExp(regExp, &#x27;g&#x27;));
+    }
+
+    // Expect left and right sides of the reference to be a non-filename type character, escape special regex chars
+    regExp = &#x27;(&#x27;+ nonFileNameChar +&#x27;)(&#x27; + escapedRefPathBase + &#x27;)(&#x27; +  escapedRefPathExt + &#x27;)(&#x27;+ nonFileNameChar + &#x27;|$)&#x27;;
+    regExps.push(new RegExp(regExp, &#x27;g&#x27;));
+
+    return regExps;
+  }
+
+  function annotator(contents, path) {
+    return [{&#x27;contents&#x27;: contents}];
+  }
+
+  function replacer(fragment, replaceRegExp, newReference, referencedFile) {
+     fragment.contents = fragment.contents.replace(replaceRegExp, &#x27;$1&#x27; + newReference + &#x27;$3$4&#x27;);
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-rev-all.revisioner.prototype" id="apidoc.module.gulp-rev-all.revisioner.prototype">module gulp-rev-all.revisioner.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.calculateHash" id="apidoc.element.gulp-rev-all.revisioner.prototype.calculateHash">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>calculateHash
+        <span class="apidocSignatureSpan">(file, stack)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calculateHash = function (file, stack) {
+
+  stack = stack || [];
+  var hash = file.revHashOriginal;
+
+  stack.push(file);
+
+  // Resolve hash for child references
+  if (Object.keys(file.revReferenceFiles).length &#x3e; 0) {
+
+    for (var key in file.revReferenceFiles) {
+
+      // Prevent infinite loops caused by circular references, don&#x27;t recurse if we&#x27;ve already encountered this file
+      if (stack.indexOf(file.revReferenceFiles[key]) === -1) {
+        hash += this.calculateHash(file.revReferenceFiles[key], stack);
+      }
+
+    }
+
+    // This file&#x27;s hash should change if any of its references will be prefixed.
+    if (this.options.prefix &#x26;&#x26;
+        Object.keys(file.referenceGroupsContainer.absolute).length) {
+      hash += this.options.prefix;
+    }
+
+    // Consolidate many hashes into one
+    hash = this.Tool.md5(hash);
+
+  }
+
+  return hash;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    // Resolve hash for child references
+    if (Object.keys(file.revReferenceFiles).length &#x3e; 0) {
+
+for (var key in file.revReferenceFiles) {
+
+  // Prevent infinite loops caused by circular references, don&#x27;t recurse if we&#x27;ve already encountered this file
+  if (stack.indexOf(file.revReferenceFiles[key]) === -1) {
+    hash += this.<span class="apidocCodeKeywordSpan">calculateHash</span>(file.revReferenceFiles[key], stack);
+  }
+
+}
+
+// This file&#x27;s hash should change if any of its references will be prefixed.
+if (this.options.prefix &#x26;&#x26;
+    Object.keys(file.referenceGroupsContainer.absolute).length) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.manifestFile" id="apidoc.element.gulp-rev-all.revisioner.prototype.manifestFile">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>manifestFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">manifestFile = function () {
+
+  var file = new Gutil.File({
+    cwd: this.pathCwd,
+    base: this.pathBase,
+    path: Path.join(this.pathBase, this.options.fileNameManifest),
+    contents: new Buffer(JSON.stringify(this.manifest, null, 2)),
+  });
+
+  file.revisioner = this;
+  return file;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  * See [gulp-awspublish](https://www.npmjs.org/package/gulp-awspublish), [gulp-cloudfront](https://www.npmjs.org/package/gulp-cloudfront
+)
+
+## Methods
+
+### .revision({ options })
+Returns a transform function that can be used to pipe files through so that they may be revisioned, also corrects refererences to
+ said files.
+
+### .<span class="apidocCodeKeywordSpan">manifestFile</span>()
+Returns a transform function that will filter out any existing files going through the pipe and will emit a new manifest file.
+Must be called after `.revision()`.
+
+```js
+var gulp = require(&#x27;gulp&#x27;);
+var RevAll = require(&#x27;gulp-rev-all&#x27;);
+
+gulp.task(&#x27;default&#x27;, function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.processFile" id="apidoc.element.gulp-rev-all.revisioner.prototype.processFile">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>processFile
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">processFile = function (file) {
+
+  if (!this.pathCwd) {
+    this.pathCwd = file.cwd;
+  }
+
+  // Chnage relative paths to absolute
+  if (!file.base.match(/^(\/|[a-z]:)/i)) {
+    file.base = Tool.join_path(file.cwd, file.base);
+  }
+
+  // Normalize the base common to all the files
+  if (!this.pathBase) {
+
+    this.pathBase = file.base;
+
+  } else if (file.base.indexOf(this.pathBase) === -1) {
+
+    var levelsBase = this.pathBase.split(/[\/|\\]/);
+    var levelsFile = file.base.split(/[\/|\\]/);
+
+    var common = [];
+    for (var level = 0, length = levelsFile.length; level &#x3c; length; level++) {
+
+      if (level &#x3c; levelsBase.length &#x26;&#x26; level &#x3c; levelsFile.length &#x26;&#x26;
+          levelsBase[level] === levelsFile[level]) {
+        common.push(levelsFile[level]);
+        continue;
+      }
+    }
+
+    if (common[common.length - 1] !== &#x27;&#x27;) {
+      common.push(&#x27;&#x27;);
+    }
+    this.pathBase = common.join(&#x27;/&#x27;);
+
+  }
+
+  // Set original values before any processing occurs
+  file.revPathOriginal = file.revOrigPath = file.path;
+  file.revFilenameExtOriginal = Path.extname(file.path);
+  file.revFilenameOriginal = Path.basename(file.path, file.revFilenameExtOriginal);
+  file.revHashOriginal = this.Tool.md5(String(file.contents));
+  file.revContentsOriginal = file.contents;
+
+  this.filesTemp.push(file);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  if (file.isStream()) {
+    this.emit(&#x27;error&#x27;, new PluginError(PLUGIN_NAME, &#x27;Streams not supported!&#x27;));
+    return callback();
+  }
+
+  if (file.isBuffer()) {
+    revisioner.<span class="apidocCodeKeywordSpan">processFile</span>(file);
+  }
+
+  file.revisioner = revisioner;
+
+  callback();
+
+}, function (callback) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.resolveReferences" id="apidoc.element.gulp-rev-all.revisioner.prototype.resolveReferences">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>resolveReferences
+        <span class="apidocSignatureSpan">(fileResolveReferencesIn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolveReferences = function (fileResolveReferencesIn) {
+
+
+  var contents = String(fileResolveReferencesIn.revContentsOriginal);
+  fileResolveReferencesIn.revReferencePaths = {};
+  fileResolveReferencesIn.revReferenceFiles = {};
+  var referenceGroupRelative = [];
+  var referenceGroupAbsolute = [];
+  fileResolveReferencesIn.referenceGroupsContainer = {
+    &#x27;relative&#x27;: referenceGroupRelative,
+    &#x27;absolute&#x27;: referenceGroupAbsolute
+  };
+
+  // Don&#x27;t try and resolve references in binary files or files that have been blacklisted
+  if (this.Tool.is_binary_file(fileResolveReferencesIn) || !this.shouldSearchFile(fileResolveReferencesIn)) {
+    return;
+  }
+
+  // For the current file (fileResolveReferencesIn), look for references to any other file in the project
+  for (var path in this.files) {
+
+    // Organize them by relative vs absolute reference types
+    var fileCurrentReference = this.files[path];
+    var references;
+
+    references = this.Tool.get_reference_representations_relative(fileCurrentReference, fileResolveReferencesIn);
+    for (var i = 0, length = references.length; i &#x3c; length; i++) {
+      referenceGroupRelative.push({
+        &#x27;file&#x27;: this.files[path],
+        &#x27;path&#x27;: references[i]
+      });
+    }
+
+    references = this.Tool.get_reference_representations_absolute(fileCurrentReference, fileResolveReferencesIn);
+    for (var i = 0, length = references.length; i &#x3c; length; i++) {
+      referenceGroupAbsolute.push({
+        &#x27;file&#x27;: this.files[path],
+        &#x27;path&#x27;: references[i]
+      });
+    }
+
+  }
+
+  // Priority relative references higher than absolute
+  for (var referenceType in fileResolveReferencesIn.referenceGroupsContainer) {
+    var referenceGroup = fileResolveReferencesIn.referenceGroupsContainer[referenceType];
+
+    for (var referenceIndex = 0, referenceGroupLength = referenceGroup.length; referenceIndex &#x3c; referenceGroupLength; referenceIndex
+++) {
+      var reference = referenceGroup[referenceIndex];
+      var regExps = this.options.referenceToRegexs(reference);
+
+      for (var j = 0; j &#x3c; regExps.length; j++) {
+        if (contents.match(regExps[j])) {
+          // Only register this reference if we don&#x27;t have one already by the same path
+          if (!fileResolveReferencesIn.revReferencePaths[reference.path]) {
+
+            fileResolveReferencesIn.revReferenceFiles[reference.file.path] = reference.file;
+            fileResolveReferencesIn.revReferencePaths[reference.path] = {
+              &#x27;regExps&#x27;: [regExps[j]],
+              &#x27;file&#x27;: reference.file,
+              &#x27;path&#x27;: reference.path
+            };
+            this.log(&#x27;gulp-rev-all:&#x27;, &#x27;Found&#x27;, referenceType, &#x27;reference [&#x27;, Gutil.colors.magenta(reference.path), &#x27;] -&#x3e; [&#x27;, Gutil
+.colors.green(reference.file.path), &#x27;] in [&#x27;, Gutil.colors.blue(fileResolveReferencesIn.revPathOriginal), &#x27;]&#x27;);
+          } else if (fileResolveReferencesIn.revReferencePaths[reference.path].file.revPathOriginal === reference.file.revPathOriginal
+) {
+            // Append the other regexes to account for inconsitent use
+            fileResolveReferencesIn.revReferencePaths[reference.path].regExps.push(regExps[j]);
+          } else {
+            this.log(&#x27;gulp-rev-all:&#x27;, &#x27;Possible ambiguous reference detected [&#x27;, Gutil.colors.red(fileResolveReferencesIn.revReferencePaths
+[reference.path].path), &#x27; (&#x27;, fileResolveReferencesIn.revReferencePaths[reference.path].file.revPathOriginal, &#x27;)] &#x3c;-&#x3e; [&#x27;, Gutil.
+colors.red(reference.path), &#x27;(&#x27;, Gutil.colors.red(reference.file.revPathOriginal), &#x27;)]&#x27;);
+          }
+        }
+      }
+    }
+  }
+
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var path = this.Tool.get_relative_path(this.pathBase, this.filesTemp[i].path);
+  this.files[path] = this.filesTemp[i];
+
+}
+
+// Resolve references to other files
+for (var path in this.files) {
+  this.<span class="apidocCodeKeywordSpan">resolveReferences</span>(this.files[path]);
+}
+
+// Resolve and set revisioned filename based on hash + reference hashes and ignore rules
+for (var path in this.files) {
+  this.revisionFilename(this.files[path]);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.revisionFilename" id="apidoc.element.gulp-rev-all.revisioner.prototype.revisionFilename">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>revisionFilename
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">revisionFilename = function (file) {
+
+  var filename = file.revFilenameOriginal;
+  var ext = file.revFilenameExtOriginal;
+
+  file.revHash = this.calculateHash(file);
+
+  // Allow the client to transform the final filename
+  if (this.options.transformFilename) {
+    filename = this.options.transformFilename.call(this, file, file.revHash);
+  } else {
+    filename = filename + &#x27;.&#x27; + file.revHash.substr(0, this.options.hashLength) + ext;
+  }
+
+  file.revFilename = filename;
+  // file.revFilenameNoExt = Tool.path_without_ext(file.revFilename);
+
+  if (this.shouldFileBeRenamed(file)) {
+    file.path = this.Tool.join_path(Path.dirname(file.path), filename);
+  }
+
+  // Maintain the combined hash used in version file
+  this.hashCombined += file.revHash;
+
+  // Maintain the manifset file
+  var pathOriginal = this.Tool.get_relative_path(this.pathBase, file.revPathOriginal, true);
+  var pathRevisioned = this.Tool.get_relative_path(file.base, file.path, true);
+  // Add only specific file types to the manifest file
+  if (this.options.includeFilesInManifest.indexOf(ext) !== -1) {
+      this.manifest[pathOriginal] = pathRevisioned;
+  }
+
+  file.revPath = pathRevisioned;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Resolve references to other files
+for (var path in this.files) {
+  this.resolveReferences(this.files[path]);
+}
+
+// Resolve and set revisioned filename based on hash + reference hashes and ignore rules
+for (var path in this.files) {
+  this.<span class="apidocCodeKeywordSpan">revisionFilename</span>(this.files[path]);
+}
+
+// Consolidate the concatinated hash of all the files, into a single hash for the version file
+this.hashCombined = this.Tool.md5(this.hashCombined);
+
+// Update references to revisioned filenames
+for (var path in this.files) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.run" id="apidoc.element.gulp-rev-all.revisioner.prototype.run">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>run
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function () {
+
+  this.hashCombined = &#x27;&#x27;;
+
+  // Go through and correct the base path now that we have proccessed all the files coming in
+  for (var i = 0, length = this.filesTemp.length; i &#x3c; length; i++) {
+
+    this.filesTemp[i].base = this.pathBase;
+    var path = this.Tool.get_relative_path(this.pathBase, this.filesTemp[i].path);
+    this.files[path] = this.filesTemp[i];
+
+  }
+
+  // Resolve references to other files
+  for (var path in this.files) {
+    this.resolveReferences(this.files[path]);
+  }
+
+  // Resolve and set revisioned filename based on hash + reference hashes and ignore rules
+  for (var path in this.files) {
+    this.revisionFilename(this.files[path]);
+  }
+
+  // Consolidate the concatinated hash of all the files, into a single hash for the version file
+  this.hashCombined = this.Tool.md5(this.hashCombined);
+
+  // Update references to revisioned filenames
+  for (var path in this.files) {
+    this.updateReferences(this.files[path]);
+  }
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+file.revisioner = revisioner;
+
+callback();
+
+    }, function (callback) {
+
+revisioner.<span class="apidocCodeKeywordSpan">run</span>();
+
+var files = revisioner.files;
+for (var filename in files) {
+  this.push(files[filename]);
+}
+callback();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.shouldFileBeRenamed" id="apidoc.element.gulp-rev-all.revisioner.prototype.shouldFileBeRenamed">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>shouldFileBeRenamed
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shouldFileBeRenamed = function (file) {
+
+  var filename = this.Tool.get_relative_path(file.base, file.revPathOriginal);
+
+  for (var i = this.options.dontGlobal.length; i--;) {
+    var regex = (this.options.dontGlobal[i] instanceof RegExp) ? this.options.dontGlobal[i] : new RegExp(this.options.dontGlobal
+[i] + &#x27;$&#x27;, &#x27;ig&#x27;);
+    if (filename.match(regex)) {
+      return false;
+    }
+  }
+
+  for (var i = this.options.dontRenameFile.length; i--;) {
+    var regex = (this.options.dontRenameFile[i] instanceof RegExp) ? this.options.dontRenameFile[i] : new RegExp(this.options.dontRenameFile
+[i] + &#x27;$&#x27;, &#x27;ig&#x27;);
+    if (filename.match(regex)) {
+      return false;
+    }
+  }
+  return true;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+} else {
+  filename = filename + &#x27;.&#x27; + file.revHash.substr(0, this.options.hashLength) + ext;
+}
+
+file.revFilename = filename;
+// file.revFilenameNoExt = Tool.path_without_ext(file.revFilename);
+
+if (this.<span class="apidocCodeKeywordSpan">shouldFileBeRenamed</span>(file)) {
+  file.path = this.Tool.join_path(Path.dirname(file.path), filename);
+}
+
+// Maintain the combined hash used in version file
+this.hashCombined += file.revHash;
+
+// Maintain the manifset file
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.shouldSearchFile" id="apidoc.element.gulp-rev-all.revisioner.prototype.shouldSearchFile">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>shouldSearchFile
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shouldSearchFile = function (file) {
+
+  var filename = this.Tool.get_relative_path(file.base, file.revPathOriginal);
+
+  for (var i = this.options.dontGlobal.length; i--;) {
+    var regex = (this.options.dontGlobal[i] instanceof RegExp) ? this.options.dontGlobal[i] : new RegExp(this.options.dontGlobal
+[i] + &#x27;$&#x27;, &#x27;ig&#x27;);
+    if (filename.match(regex)) {
+      return false;
+    }
+  }
+
+  for (var i = this.options.dontSearchFile.length; i--;) {
+    var regex = (this.options.dontSearchFile[i] instanceof RegExp) ? this.options.dontSearchFile[i] : new RegExp(this.options.dontSearchFile
+[i] + &#x27;$&#x27;, &#x27;ig&#x27;);
+    if (filename.match(regex)) {
+      return false;
+    }
+  }
+  return true;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var referenceGroupAbsolute = [];
+    fileResolveReferencesIn.referenceGroupsContainer = {
+&#x27;relative&#x27;: referenceGroupRelative,
+&#x27;absolute&#x27;: referenceGroupAbsolute
+    };
+
+    // Don&#x27;t try and resolve references in binary files or files that have been blacklisted
+    if (this.Tool.is_binary_file(fileResolveReferencesIn) || !this.<span class="apidocCodeKeywordSpan">shouldSearchFile</span>(fileResolveReferencesIn
+)) {
+return;
+    }
+
+    // For the current file (fileResolveReferencesIn), look for references to any other file in the project
+    for (var path in this.files) {
+
+// Organize them by relative vs absolute reference types
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.shouldUpdateReference" id="apidoc.element.gulp-rev-all.revisioner.prototype.shouldUpdateReference">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>shouldUpdateReference
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shouldUpdateReference = function (file) {
+
+  var filename = this.Tool.get_relative_path(file.base, file.revPathOriginal);
+
+  for (var i = this.options.dontGlobal.length; i--;) {
+    var regex = (this.options.dontGlobal[i] instanceof RegExp) ? this.options.dontGlobal[i] : new RegExp(this.options.dontGlobal
+[i] + &#x27;$&#x27;, &#x27;ig&#x27;);
+    if (filename.match(regex)) {
+      return false;
+    }
+  }
+
+  for (var i = this.options.dontUpdateReference.length; i--;) {
+    var regex = (this.options.dontUpdateReference[i] instanceof RegExp) ? this.options.dontUpdateReference[i] : new RegExp(this.
+options.dontUpdateReference[i] + &#x27;$&#x27;, &#x27;ig&#x27;);
+    if (filename.match(regex)) {
+      return false;
+    }
+  }
+
+  return true;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// Transform path using client supplied transformPath callback,
+pathReferenceReplace = this.options.transformPath.call(this, pathReferenceReplace, reference.path, reference.file, file);
+      } else if (this.options.prefix &#x26;&#x26; pathReferenceReplace[0] === &#x27;/&#x27;) {
+// Append with user supplied prefix
+pathReferenceReplace = this.Tool.join_path_url(this.options.prefix, pathReferenceReplace);
+      }
+
+      if (this.<span class="apidocCodeKeywordSpan">shouldUpdateReference</span>(reference.file)) {
+// The extention should remain constant so we dont add extentions to references without extentions
+var noExtReplace = Tool.path_without_ext(pathReferenceReplace);
+
+for(var i = 0; i &#x3c; annotatedContent.length; i++){
+  for(var j = 0; j &#x3c; reference.regExps.length; j++){
+    this.options.replacer(annotatedContent[i], reference.regExps[j], noExtReplace, reference.file);
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.updateReferences" id="apidoc.element.gulp-rev-all.revisioner.prototype.updateReferences">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>updateReferences
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">updateReferences = function (file) {
+
+  // Don&#x27;t try and update references in binary files or blacklisted files
+  if (this.Tool.is_binary_file(file) || !this.shouldSearchFile(file)) {
+    return;
+  }
+
+  var contents = String(file.revContentsOriginal);
+  var annotatedContent = this.options.annotator(contents, file.revPathOriginal);
+
+  for (var pathReference in file.revReferencePaths) {
+
+    var reference = file.revReferencePaths[pathReference];
+
+    // Replace regular filename with revisioned version
+    var referencePath = reference.path.substr(0, reference.path.length - (reference.file.revFilenameOriginal.length + reference.
+file.revFilenameExtOriginal.length));
+    var pathReferenceReplace = referencePath + reference.file.revFilename;
+
+
+    if (this.options.transformPath) {
+      // Transform path using client supplied transformPath callback,
+      pathReferenceReplace = this.options.transformPath.call(this, pathReferenceReplace, reference.path, reference.file, file);
+    } else if (this.options.prefix &#x26;&#x26; pathReferenceReplace[0] === &#x27;/&#x27;) {
+      // Append with user supplied prefix
+      pathReferenceReplace = this.Tool.join_path_url(this.options.prefix, pathReferenceReplace);
+    }
+
+    if (this.shouldUpdateReference(reference.file)) {
+      // The extention should remain constant so we dont add extentions to references without extentions
+      var noExtReplace = Tool.path_without_ext(pathReferenceReplace);
+
+      for(var i = 0; i &#x3c; annotatedContent.length; i++){
+        for(var j = 0; j &#x3c; reference.regExps.length; j++){
+          this.options.replacer(annotatedContent[i], reference.regExps[j], noExtReplace, reference.file);
+        }
+      }
+    }
+
+  }
+
+  contents = annotatedContent.map(function(annotation) { return annotation.contents; }).join(&#x27;&#x27;);
+  file.contents = new Buffer(contents);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  // Consolidate the concatinated hash of all the files, into a single hash for the version file
+  this.hashCombined = this.Tool.md5(this.hashCombined);
+
+  // Update references to revisioned filenames
+  for (var path in this.files) {
+    this.<span class="apidocCodeKeywordSpan">updateReferences</span>(this.files[path]);
+  }
+
+};
+
+/**
+ * Go through each file in the file pool, search for references to any other file in the pool.
+ */
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.revisioner.prototype.versionFile" id="apidoc.element.gulp-rev-all.revisioner.prototype.versionFile">
+        function <span class="apidocSignatureSpan">gulp-rev-all.revisioner.prototype.</span>versionFile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">versionFile = function () {
+
+  var out = {
+    hash: this.hashCombined,
+    timestamp: new Date()
+  };
+
+  var file = new Gutil.File({
+    cwd: this.pathCwd,
+    base: this.pathBase,
+    path: Path.join(this.pathBase, this.options.fileNameVersion),
+    contents: new Buffer(JSON.stringify(out, null, 2)),
+    revisioner: this
+  });
+
+  file.revisioner = this;
+  return file;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```json
+{
+  &#x22;css/unicorn.css&#x22;: &#x22;css/unicorn.098f6bcd.css&#x22;,
+  &#x22;js/unicorn.js&#x22;: &#x22;js/unicorn.273c2cin.js&#x22;
+}
+```
+
+### .<span class="apidocCodeKeywordSpan">versionFile</span>()
+Returns a transform function that will filter out any existing files going through the pipe and will emit a new version file.  Must
+ be called after `.revision()`.
+
+```js
+var gulp = require(&#x27;gulp&#x27;);
+var RevAll = require(&#x27;gulp-rev-all&#x27;);
+
+gulp.task(&#x27;default&#x27;, function () {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gulp-rev-all.tool" id="apidoc.module.gulp-rev-all.tool">module gulp-rev-all.tool</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.tool.get_reference_representations_absolute" id="apidoc.element.gulp-rev-all.tool.get_reference_representations_absolute">
+        function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>get_reference_representations_absolute
+        <span class="apidocSignatureSpan">(fileCurrentReference, file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_reference_representations_absolute = function (fileCurrentReference, file) {
+
+  var representations = [];
+  var representation;
+
+  //  Scenario 1: Current file is anywhere
+  //  /view/index.html  (reference: absolute)
+  representations.push(get_relative_path(fileCurrentReference.base, fileCurrentReference.revPathOriginal, false));
+
+  // Without starting slash, only if it contains a directory
+  // view/index.html  (reference: absolute, without slash prefix)
+  representation = get_relative_path(fileCurrentReference.base, fileCurrentReference.revPathOriginal, true);
+  if (representation.indexOf(&#x27;/&#x27;)) {
+    representations.push(representation);
+  }
+
+  return representations;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    path: &#x27;/first/second/third/script.js&#x27;,
+    base: base
+  });
+
+  file.revPathOriginal = file.path;
+  fileReference.revPathOriginal = fileReference.path;
+
+  var references = Tool.<span class="apidocCodeKeywordSpan">get_reference_representations_absolute</span>(fileReference, file);
+
+  references.length.should.equal(2);
+  references[0].should.equal(&#x27;/third/script.js&#x27;);
+  references[1].should.equal(&#x27;third/script.js&#x27;);
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.tool.get_reference_representations_relative" id="apidoc.element.gulp-rev-all.tool.get_reference_representations_relative">
+        function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>get_reference_representations_relative
+        <span class="apidocSignatureSpan">(fileCurrentReference, file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_reference_representations_relative = function (fileCurrentReference, file) {
+
+  var representations = [];
+
+  //  Scenario 2: Current file is the same directory or lower than the reference
+  //        (ie. file.path and the reference file.path are the same)
+  //
+  //          file.base = /user/project
+  //          file.path = /user/project/second/current_file.html
+  //  fileCurrentReference.path = /user/project/second/index.html
+
+  if (dirname_with_sep(fileCurrentReference.path).indexOf(dirname_with_sep(file.path)) === 0) {
+
+    //  index.html
+    representations.push(get_relative_path(Path.dirname(file.path), fileCurrentReference.revPathOriginal, true));
+
+    //  ./index.html   (reference: relative)
+    representations.push(&#x27;.&#x27; + get_relative_path(Path.dirname(file.path), fileCurrentReference.revPathOriginal, false));
+  }
+
+  //  Scenario 3: Current file is in a different child directory than the reference
+  //      (ie. file.path and the reference file.path are different, not in root directory)
+  //
+  //          file.base = /user/project
+  //          file.path = /user/project/first/index.html
+  //  fileCurrentReference.path = /user/project/second/index.html
+
+  if (dirname_with_sep(file.path) !== dirname_with_sep(fileCurrentReference.path) &#x26;&#x26;
+    dirname_with_sep(fileCurrentReference.path).indexOf(dirname_with_sep(file.path)) === -1) {
+
+    var pathCurrentReference = dirname_with_sep(get_relative_path(fileCurrentReference.base, fileCurrentReference.revPathOriginal
+));
+    var pathFile = dirname_with_sep(get_relative_path(file.base, file.revPathOriginal));
+
+    // ../second/index.html
+    var relPath = Path.relative(pathFile, pathCurrentReference);
+    relPath = relPath.replace(/\\/g, &#x27;/&#x27;);
+    representations.push(relPath + &#x27;/&#x27; + Path.basename(fileCurrentReference.revPathOriginal));
+  }
+
+  return representations;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    path: &#x27;/first/second/third/script.js&#x27;,
+    base: base
+  });
+
+  file.revPathOriginal = file.path;
+  fileReference.revPathOriginal = fileReference.path;
+
+  var references = Tool.<span class="apidocCodeKeywordSpan">get_reference_representations_relative</span>(fileReference, file);
+
+  references.length.should.equal(2);
+  references[0].should.equal(&#x27;script.js&#x27;);
+  references[1].should.equal(&#x27;./script.js&#x27;);
+
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.tool.get_relative_path" id="apidoc.element.gulp-rev-all.tool.get_relative_path">
+        function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>get_relative_path
+        <span class="apidocSignatureSpan">(base, path, noStartingSlash)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_relative_path = function (base, path, noStartingSlash) {
+
+  if (base === path) {
+    return &#x27;&#x27;;
+  }
+
+  // Sanitize inputs, convert windows to posix style slashes, ensure trailing slash for base
+  base = base.replace(/^[a-z]:/i, &#x27;&#x27;).replace(/\\/g, &#x27;/&#x27;).replace(/\/$/g, &#x27;&#x27;) + &#x27;/&#x27;;
+  path = path.replace(/^[a-z]:/i, &#x27;&#x27;).replace(/\\/g, &#x27;/&#x27;);
+
+  // Only truncate paths that overap with the base
+  if (base === path.substr(0, base.length)) {
+    path = &#x27;/&#x27; + path.substr(base.length);
+  }
+
+  var modifyStartingSlash = noStartingSlash !== undefined;
+  if (modifyStartingSlash) {
+    if (path[0] === &#x27;/&#x27; &#x26;&#x26; noStartingSlash) {
+      path = path.substr(1);
+    } else if (path[0] !== &#x27;/&#x27; &#x26;&#x26; !noStartingSlash){
+      path = &#x27;/&#x27; + path;
+    }
+  }
+
+  return path;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    });
+
+    describe(&#x27;get_relative_path&#x27;, function () {
+
+it(&#x27;should only truncate paths that overap with the base&#x27;, function () {
+
+  Tool.<span class="apidocCodeKeywordSpan">get_relative_path</span>(&#x27;/base/&#x27;, &#x27;sub/index.html&#x27;).should.equal
+(&#x27;sub/index.html&#x27;);
+  Tool.get_relative_path(&#x27;/base/&#x27;, &#x27;/sub/index.html&#x27;).should.equal(&#x27;/sub/index.html&#x27;);
+  Tool.get_relative_path(&#x27;/base/&#x27;, &#x27;/base/sub/index.html&#x27;).should.equal(&#x27;/sub/index.html&#x27;);
+
+});
+
+describe(&#x27;windows&#x27;, function () {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.tool.is_binary_file" id="apidoc.element.gulp-rev-all.tool.is_binary_file">
+        function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>is_binary_file
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">is_binary_file = function (file) {
+
+  var length = (file.contents.length &#x3e; 50) ? 50 : file.contents.length;
+  for (var i = 0; i &#x3c; length; i++) {
+    if (file.contents[i] === 0) {
+      return true;
+    }
+  }
+  return false;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var referenceGroupAbsolute = [];
+    fileResolveReferencesIn.referenceGroupsContainer = {
+&#x27;relative&#x27;: referenceGroupRelative,
+&#x27;absolute&#x27;: referenceGroupAbsolute
+    };
+
+    // Don&#x27;t try and resolve references in binary files or files that have been blacklisted
+    if (this.Tool.<span class="apidocCodeKeywordSpan">is_binary_file</span>(fileResolveReferencesIn) || !this.shouldSearchFile(fileResolveReferencesIn
+)) {
+return;
+    }
+
+    // For the current file (fileResolveReferencesIn), look for references to any other file in the project
+    for (var path in this.files) {
+
+// Organize them by relative vs absolute reference types
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.tool.join_path" id="apidoc.element.gulp-rev-all.tool.join_path">
+        function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>join_path
+        <span class="apidocSignatureSpan">(directory, filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">join_path = function (directory, filename) {
+
+  return Path.join(directory, filename).replace(/^[a-z]:\\/i, &#x27;/&#x27;).replace(/\\/g, &#x27;/&#x27;);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    describe(&#x27;joinPath&#x27;, function () {
+
+      describe(&#x27;windows&#x27;, function () {
+
+        it(&#x27;should correct slashes&#x27;, function () {
+
+Tool.<span class="apidocCodeKeywordSpan">join_path</span>(&#x27;d:\\first\\second&#x27;, &#x27;images.png&#x27;).should.equal(&#
+x27;/first/second/images.png&#x27;);
+
+        });
+
+        it(&#x27;should not add starting slash&#x27;, function () {
+
+Tool.join_path(&#x27;first\\second&#x27;, &#x27;images.png&#x27;).should.equal(&#x27;first/second/images.png&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.tool.join_path_url" id="apidoc.element.gulp-rev-all.tool.join_path_url">
+        function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>join_path_url
+        <span class="apidocSignatureSpan">(prefix, path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">join_path_url = function (prefix, path) {
+
+  prefix = prefix.replace(/\/$/, &#x27;&#x27;);
+  path = path.replace(/^\//, &#x27;&#x27;);
+  return [ prefix, path ].join(&#x27;/&#x27;);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    });
+
+    it(&#x27;should replaced references using transform if it is supplied&#x27;, function (done) {
+
+      setup({
+transformPath: function (reved, source, path) {
+  return this.Tool.<span class="apidocCodeKeywordSpan">join_path_url</span>(&#x27;//images.example.com/&#x27;, reved.replace(&#x27
+;img/&#x27;, &#x27;&#x27;));
+}
+      });
+
+      streamRevision.on(&#x27;data&#x27;, function () {});
+      streamRevision.on(&#x27;end&#x27;, function () {
+
+String(files[&#x27;/index.html&#x27;].contents).should.match(/\/\/images\.example\.com\/image1\.[a-z0-9]{8}\.jpg/);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.tool.md5" id="apidoc.element.gulp-rev-all.tool.md5">
+        function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>md5
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">md5 = function (str) {
+
+  return crypto.createHash(&#x27;md5&#x27;).update(str, &#x27;utf8&#x27;).digest(&#x27;hex&#x27;);
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  }
+
+  // Set original values before any processing occurs
+  file.revPathOriginal = file.revOrigPath = file.path;
+  file.revFilenameExtOriginal = Path.extname(file.path);
+  file.revFilenameOriginal = Path.basename(file.path, file.revFilenameExtOriginal);
+  file.revHashOriginal = this.Tool.<span class="apidocCodeKeywordSpan">md5</span>(String(file.contents));
+  file.revContentsOriginal = file.contents;
+
+  this.filesTemp.push(file);
+
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gulp-rev-all.tool.path_without_ext" id="apidoc.element.gulp-rev-all.tool.path_without_ext">
+        function <span class="apidocSignatureSpan">gulp-rev-all.tool.</span>path_without_ext
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">path_without_ext = function (path) {
+  var ext = Path.extname(path);
+  return path.substr(0, path.length - ext.length);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.Tool = Tool;
+
+
+    var nonFileNameChar = &#x27;[^a-zA-Z0-9\\.\\-\\_\\/]&#x27;;
+    var qoutes = &#x27;\&#x27;|&#x22;&#x27;;
+
+    function referenceToRegexs(reference) {
+var escapedRefPathBase = Tool.<span class="apidocCodeKeywordSpan">path_without_ext</span>(reference.path).replace(/([^0-9a-z])/ig
+, &#x27;\\$1&#x27;);
+var escapedRefPathExt = Path.extname(reference.path).replace(/([^0-9a-z])/ig, &#x27;\\$1&#x27;);
+
+var regExp, regExps = [];
+var isJSReference = reference.path.match(/\.js$/);
+
+// Extensionless javascript file references has to to be qouted
+if (isJSReference) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
